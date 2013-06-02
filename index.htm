@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+		<link rel="stylesheet" href="/js/main.css" />
+		<script src="http://code.jquery.com/jquery-2.0.1.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/jscolor/jscolor.js"></script>
+		<script src="/js/main.js"></script>
+		<script language="javascript">
+			var App = {
+				samples_path: "/wav_samples/",
+				data_path: "/data/"
+			};
+			$(document).ready(function(){
+				App.editor = new Editor();
+				App.setSelector = new SetSelector();
+				App.board = new Board();
+				App.board.loadData();
+				document.body.addEventListener("keypress",  bind(App.board, App.board.keypress));
+			});
+		</script>
+	</head>
+	<body>
+		<div style="padding: 10px;">
+			Set: <select id="set"></select>
+			&nbsp;&nbsp;<button id="btnNewSet">make a new set</button>
+			<span id="setOptions" style="display: none;">
+				&nbsp;&nbsp;<button id="btnRenameSet">rename this set</button>
+				&nbsp;&nbsp;<button id="btnDuplicateSet">clone this set</button>
+				&nbsp;&nbsp;<button id="btnDeleteSet">delete this set</button>
+			</span>
+		</div>
+		<div id="board"></div>
+		<div class="clear"></div>
+		<div id="edit" style="display: none; padding: 10px;">
+			<table class="edit">
+				<tr><td>Key</td><td><input id="key" type="text" readonly /></td><td>color</td></tr>
+				<tr><td>Text</td><td><input id="txt" type="text" /></td><td rowspan="2">
+<div id="keyColor"></div>
+<!--
+<div class="key color"><div style="height: 60px"></div></div>
+-->
+</td></tr>
+				<tr><td>Clip</td><td><input id="wav" type="text" /></td></tr>
+				<tr><td></td><td><button id="btnSave">save</button>&nbsp;&nbsp;<button id="btnCancel">cancel</button>&nbsp;&nbsp;<button id="btnReload">reload sounds</button>&nbsp;&nbsp;<button id="btnFileman">manage sounds</button></td><td><input id="col" readonly /></td></tr>
+			</table>
+		</div>
+	</body>
+</html>

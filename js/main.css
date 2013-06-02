@@ -1,0 +1,70 @@
+
+table { table-layout: fixed; }
+
+body{
+	background-color: #BBBBBB;
+	padding: 0px;
+	margin: 0px;
+}
+input{
+	width: 500px;
+	padding: 3px
+}
+button{
+	padding: 3px;
+}
+select{
+	padding: 3px;
+}
+
+.key {
+	background: -moz-linear-gradient(-90deg, white 0%, #E3E3E3 100%) repeat scroll 0 0 white;
+	background: -webkit-linear-gradient(-90deg, white 0%, #E3E3E3 100%) repeat scroll 0 0 white;
+	border: 1px solid #AAAAAA;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2);
+	color: #333333;
+	padding: 3px;
+	overflow: hidden;
+	cursor: pointer;
+	vertical-align: top;
+
+}
+.pressed {
+	color: #33BBFF;
+	box-shadow: inset 1px 1px 1px 0 rgba(0, 0, 0, 0.2);
+	background: #f3f3f3;
+	background-image: -moz-linear-gradient(90deg, #f3f3f3 0%, #dddddd 100%);
+	background-image: -webkit-linear-gradient(90deg, #f3f3f3 0%, #dddddd 100%);
+}
+.outer {
+	margin: 3px;
+	height: 70px;
+}
+.inner-large {
+	overflow: hidden;
+	font-size: 10px;
+}
+.inner-small {
+	font-size: 14px;
+	height: 12px;
+	width: 12px;
+	opacity: 0.7;
+	margin-right: 3px;
+}
+.clear {
+	clear: both;
+}
+.disabled {
+	color: #BBBBBB;
+	box-shadow: inset 1px 1px 1px 0 rgba(0, 0, 0, 0.2);
+	background: #f9f9f9;
+	background-image: -moz-linear-gradient(90deg, #f9f9f9 -40%, #cccccc 100%);
+	background-image: -webkit-linear-gradient(90deg, #f9f9f9 -40%, #cccccc 100%);
+}
+.edit {
+	padding: 5px;
+	border: 2px solid black;
+	border-radius: 5px 5px 5px 5px;
+}
+
