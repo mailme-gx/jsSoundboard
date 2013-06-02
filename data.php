@@ -1,5 +1,5 @@
 <?php
-$f = 'data.txt';
+$f = 'data/data.txt';
 
 if(isset($_REQUEST["data"])) {
 	if(file_exists($f)) // backup old data
@@ -9,7 +9,7 @@ if(isset($_REQUEST["data"])) {
 	fclose($fp);
 } else {
 	if(!file_exists($f)) {
-		echo "[]";
+		echo "{}";
 	} else {
 		readfile($f);
 		exit;

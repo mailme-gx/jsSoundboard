@@ -10,7 +10,8 @@ Board = function(keys) {
 	$("#btnRenameSet").click(bind(this, this.renameSet));
 	$("#btnDuplicateSet").click(bind(this, this.cloneSet));
 	$("#btnDeleteSet").click(bind(this, this.deleteSet));
-	this.loadSet(getCookie("lastset"));
+	if(getCookie("lastset") != '')
+		this.loadSet(getCookie("lastset"));
 
 };
 
@@ -77,10 +78,10 @@ Board.prototype.loadSet = function(set) {
 	$(this.el).hide();	
 	$("#setOptions").hide();	
 	this.initKeys();
-	this.selectedSet = set;
-	// remember last set
-	setCookie("lastset", this.selectedSet);
 	if(this.sets != null && this.sets[set] != null) {
+		this.selectedSet = set;
+		// remember last set
+		setCookie("lastset", this.selectedSet);
 		var data = this.sets[set];
 		for(var i = 0; i < data.length; i++) 
 			this.setKey(data[i].chr, data[i].wav, data[i].txt, data[i].col);
